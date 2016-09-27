@@ -10,9 +10,11 @@ ns.Settings.MaxAlpha = 1
 
 --Time it takes for a frame to fade in (in seconds, fractions are available)
 ns.Settings.FadeInTime = 0.25
+ns.Settings.FadeInTimeLong = 0.5
 
 --Time it takes for a frame to fade out (in seconds, fractions are available)
 ns.Settings.FadeOutTime = 0.5
+ns.Settings.FadeOutTimeLong = 3
 
 --The order of appearence of stacked frames, see http://wow.gamepedia.com/FrameStrata for details
 ns.Settings.FrameStrata = "TOOLTIP"

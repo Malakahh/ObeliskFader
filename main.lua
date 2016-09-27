@@ -8,6 +8,7 @@ handler:RegisterEvent("PLAYER_REGEN_ENABLED")
 handler:RegisterEvent("PLAYER_REGEN_DISABLED")
 handler:RegisterEvent("UNIT_HEALTH")
 handler:RegisterEvent("GROUP_ROSTER_UPDATE")
+handler:RegisterEvent("UNIT_CONNECTION")
 
 local function SecureFade(frame, fadeInfo)
 	if fadeInfo.endAlpha == frame:GetAlpha() then
@@ -29,32 +30,30 @@ local function SecureFade(frame, fadeInfo)
 	handler:SetScript("OnUpdate", UIFrameFade_OnUpdate);
 end
 
-local function FadeOut(frame, OnFinish)
+local function FadeOut(frame, newTime)
 	if frame.inCombatLock then
 		return
 	end
 
 	local fadeInfo = {
 		mode = "OUT",
-		timeToFade = S.FadeOutTime,
+		timeToFade = newTime or S.FadeOutTime,
 		startAlpha = frame:GetAlpha(),
-		endAlpha = S.MinAlpha,
-		finishedFunc = OnFinish
+		endAlpha = S.MinAlpha
 	}
 	SecureFade(frame, fadeInfo)
 end
 
-local function FadeIn(frame, OnFinish)
+local function FadeIn(frame, newTime)
 	if frame.inCombatLock then
 		return
 	end
 
 	local fadeInfo = {
 		mode = "IN",
-		timeToFade = S.FadeInTime,
+		timeToFade = newTime or S.FadeInTime,
 		startAlpha = frame:GetAlpha(),
-		endAlpha = S.MaxAlpha,
-		finishedFunc = OnFinish
+		endAlpha = S.MaxAlpha
 	}
 	SecureFade(frame, fadeInfo)
 end
@@ -164,3 +163,18 @@ function handler:UNIT_HEALTH(unit)
 		end
 	end
 end
+
+function handler:UNIT_CONNECTION(id, hasConnected)
+	if id == "party1" and S.Frames.PartyMemberFrame1 then
+		FadeOut(PartyMemberFrame1, S.FadeOutTimeLong)
+	elseif id == "party2" and S.Frames.PartyMemberFrame2 then
+		FadeOut(PartyMemberFrame2, S.FadeOutTimeLong)
+	elseif id == "party3" and S.Frames.PartyMemberFrame3 then
+		FadeOut(PartyMemberFrame3, S.FadeOutTimeLong)
+	elseif id == "party4" and S.Frames.PartyMemberFrame4 then
+		FadeOut(PartyMemberFrame4, S.FadeOutTimeLong)
+	elseif id == "party5" and S.Frames.PartyMemberFrame5 then
+		FadeOut(PartyMemberFrame5, S.FadeOutTimeLong)
+	end
+end
+
