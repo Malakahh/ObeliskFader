@@ -1,0 +1,8 @@
+## Interface: 70000
+## Title: UnitFrameFader
+## Author: Malakahh
+## Notes: Out of combat fading for the default unitframes
+## Version: 0.1a
+
+settings.lua
+main.lua
