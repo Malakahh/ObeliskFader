@@ -14,6 +14,9 @@ ns.Settings.FadeInTime = 0.25
 --Time it takes for a frame to fade out (in seconds, fractions are available)
 ns.Settings.FadeOutTime = 0.5
 
+--The order of appearence of stacked frames, see http://wow.gamepedia.com/FrameStrata for details
+ns.Settings.FrameStrata = "TOOLTIP"
+
 ------------
 -- Frames --
 ------------
@@ -37,7 +40,80 @@ ns.Settings.Frames.PlayerFrame.Boundaries = {
 	}
 }
 
-ns.Settings.Frames.
+ns.Settings.Frames.PartyMemberFrame1 = {}
+ns.Settings.Frames.PartyMemberFrame1.Boundaries = {
+	{
+		point = "TOPLEFT",
+		x = 0,
+		y = 0
+	},
+	{
+		point = "BOTTOMRIGHT",
+		x = -5,
+		y = 0
+	}
+}
+
+ns.Settings.Frames.PartyMemberFrame2 = {}
+ns.Settings.Frames.PartyMemberFrame2.Boundaries = {
+	{
+		point = "TOPLEFT",
+		x = 0,
+		y = 0
+	},
+	{
+		point = "BOTTOMRIGHT",
+		x = -5,
+		y = 0
+	}
+}
+
+
+ns.Settings.Frames.PartyMemberFrame3 = {}
+ns.Settings.Frames.PartyMemberFrame3.Boundaries = {
+	{
+		point = "TOPLEFT",
+		x = 0,
+		y = 0
+	},
+	{
+		point = "BOTTOMRIGHT",
+		x = -5,
+		y = 0
+	}
+}
+
+
+ns.Settings.Frames.PartyMemberFrame4 = {}
+ns.Settings.Frames.PartyMemberFrame4.Boundaries = {
+	{
+		point = "TOPLEFT",
+		x = 0,
+		y = 0
+	},
+	{
+		point = "BOTTOMRIGHT",
+		x = -5,
+		y = 0
+	}
+}
+
+
+ns.Settings.Frames.PartyMemberFrame5 = {}
+ns.Settings.Frames.PartyMemberFrame5.Boundaries = {
+	{
+		point = "TOPLEFT",
+		x = 0,
+		y = 0
+	},
+	{
+		point = "BOTTOMRIGHT",
+		x = -5,
+		y = 0
+	}
+}
+
+
 
 -- ns.Settings.Frames.TargetFrame = {}
 -- ns.Settings.Frames.TargetFrame.Boundaries = {
