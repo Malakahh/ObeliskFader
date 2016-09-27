@@ -37,6 +37,8 @@ ns.Settings.Frames.PlayerFrame.Boundaries = {
 	}
 }
 
+ns.Settings.Frames.
+
 -- ns.Settings.Frames.TargetFrame = {}
 -- ns.Settings.Frames.TargetFrame.Boundaries = {
 -- 	{
