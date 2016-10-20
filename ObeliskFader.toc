@@ -1,0 +1,8 @@
+## Interface: 70000
+## Title: |cFFDDCF99Obelisk|r Fader
+## Author: Malakahh
+## Notes: Out of combat fading for much of the default and Obelisk UI
+## Version: 0.5b
+
+settings.lua
+main.lua

@@ -6,7 +6,7 @@ handler:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) e
 handler:RegisterEvent("PLAYER_ENTERING_WORLD")
 handler:RegisterEvent("PLAYER_REGEN_ENABLED")
 handler:RegisterEvent("PLAYER_REGEN_DISABLED")
-handler:RegisterEvent("UNIT_HEALTH")
+handler:RegisterEvent("UNIT_HEALTH_FREQUENT")
 handler:RegisterEvent("GROUP_ROSTER_UPDATE")
 handler:RegisterEvent("UNIT_CONNECTION")
 
@@ -114,7 +114,7 @@ function handler:PLAYER_REGEN_DISABLED()
 	end
 end
 
-function handler:UNIT_HEALTH(unit)
+function handler:UNIT_HEALTH_FREQUENT(unit)
 	if unit == "player" and S.Frames.PlayerFrame then
 		if UnitHealth("player") == UnitHealthMax("player") then
 			FadeOut(PlayerFrame)
